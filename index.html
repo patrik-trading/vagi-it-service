@@ -24,7 +24,9 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Figtree', sans-serif; background: #f0f4fc; color: var(--ink); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    html { background: #0d2459; }
+    body { font-family: 'Figtree', sans-serif; background: #eef3ff; color: var(--ink); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    footer { background: #0d2459; color: rgba(255,255,255,.5); padding: 2.5rem 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0; }
 
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.93); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 66px; }
@@ -98,14 +100,14 @@
     /* ABOUT */
     .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .about-visual { background: var(--accent-section); border: 1px solid var(--accent-mid); border-radius: 20px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-    .about-big { font-size: 4.5rem; font-weight: 800; color: var(--accent); letter-spacing: -.04em; line-height: 1; }
-    .about-big span { font-size: 1.5rem; font-weight: 600; color: var(--muted); display: block; margin-top: 2px; }
+    .about-big { font-size: 4.5rem; font-weight: 800; color: var(--accent); letter-spacing: -.04em; line-height: 1; margin-bottom: .4rem; }
+    .about-big span { font-size: 1rem; font-weight: 500; color: var(--muted); display: block; margin-top: .6rem; letter-spacing: 0; line-height: 1.4; }
     .divider { height: 1px; background: var(--border); }
     .principle { display: flex; align-items: flex-start; gap: 12px; font-size: .9rem; color: var(--ink2); }
     .principle-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
 
     /* FAQ */
-    .faq-wrap { max-width: 680px; margin: 3rem auto 0; }
+    .faq-wrap { max-width: 680px; margin: 3rem auto 0; width: 100%; box-sizing: border-box; }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 0; cursor: pointer; font-weight: 600; font-size: .95rem; color: var(--ink); gap: 1rem; user-select: none; transition: color .15s; }
     .faq-q:hover { color: var(--accent); }
@@ -142,7 +144,6 @@
     .form-success p { font-size: .875rem; color: var(--muted); }
 
     /* FOOTER */
-    footer { background: #0d2459; color: rgba(255,255,255,.5); padding: 2.5rem 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-logo .logo-name { color: #fff; }
     .footer-logo .logo-sub { color: rgba(255,255,255,.3); }
     footer p { font-size: .8rem; }
@@ -167,6 +168,8 @@
       .contact-inner { grid-template-columns: 1fr; }
       .f-row { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .faq-wrap { max-width: 100%; padding: 0; }
+      footer { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
   </style>
@@ -233,7 +236,7 @@
         </div>
       </div>
       <div class="hero-callout">
-        <span>⚡</span> Anfragen werden zeitnah beantwortet – jederzeit.
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Anfragen werden zeitnah beantwortet – jederzeit.
       </div>
     </div>
   </div>
@@ -245,12 +248,12 @@
     <h2>Was wir für Sie erledigen</h2>
     <p class="lead">Von der schnellen Störungsbehebung bis zur vollständigen IT-Betreuung.</p>
     <div class="services-grid reveal">
-      <div class="card"><div class="card-icon">🖥️</div><h3>IT-Support & Störungsbehebung</h3><p>Hilfe bei Problemen mit Windows, Mac, Smartphone, Drucker oder kleinen Netzwerken – schnell und unkompliziert.</p></div>
-      <div class="card"><div class="card-icon">☁️</div><h3>Microsoft 365</h3><p>Einrichtung, Migration und Administration von M365-Diensten – Exchange, Teams, SharePoint und mehr.</p></div>
-      <div class="card"><div class="card-icon">🖨️</div><h3>Arbeitsplatz-Einrichtung</h3><p>Neue Geräte konfigurieren, Hardware wechseln oder den gesamten IT-Umzug begleiten – alles aus einer Hand.</p></div>
-      <div class="card"><div class="card-icon">🌐</div><h3>Netzwerk & Infrastruktur</h3><p>Kleine Netzwerke für Büro und Home-Office konfigurieren und optimieren.</p></div>
-      <div class="card"><div class="card-icon">🔒</div><h3>IT-Sicherheit</h3><p>Sichere IT-Umgebungen als Standard – nicht als Zusatz. Wir sorgen dafür, dass Ihre Daten geschützt sind.</p></div>
-      <div class="card"><div class="card-icon">📡</div><h3>Fernwartung & Vor-Ort</h3><p>Flexible Unterstützung – bequem per Fernwartung oder direkt persönlich bei Ihnen.</p></div>
+      <div class="card"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>IT-Support & Störungsbehebung</h3><p>Hilfe bei Problemen mit Windows, Mac, Smartphone, Drucker oder kleinen Netzwerken – schnell und unkompliziert.</p></div>
+      <div class="card"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h1a4 4 0 0 1 0 8h-1"/><path d="M6 10H5a4 4 0 0 0 0 8h1"/><path d="M8 16h8"/><path d="M8 12a4 4 0 0 1 8 0"/></svg></div><h3>Microsoft 365</h3><p>Einrichtung, Migration und Administration von M365-Diensten – Exchange, Teams, SharePoint und mehr.</p></div>
+      <div class="card"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01"/><path d="M17 9v6"/></svg></div><h3>Arbeitsplatz-Einrichtung</h3><p>Neue Geräte konfigurieren, Hardware wechseln oder den gesamten IT-Umzug begleiten – alles aus einer Hand.</p></div>
+      <div class="card"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Netzwerk & Infrastruktur</h3><p>Kleine Netzwerke für Büro und Home-Office konfigurieren und optimieren.</p></div>
+      <div class="card"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>IT-Sicherheit</h3><p>Sichere IT-Umgebungen als Standard – nicht als Zusatz. Wir sorgen dafür, dass Ihre Daten geschützt sind.</p></div>
+      <div class="card"><div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#1a6bff"/></svg></div><h3>Fernwartung & Vor-Ort</h3><p>Flexible Unterstützung – bequem per Fernwartung oder direkt persönlich bei Ihnen.</p></div>
     </div>
   </div>
 </section>
@@ -277,7 +280,7 @@
     <p class="lead">Keine bösen Überraschungen. Erst nach gemeinsamer Einigung entstehen Kosten.</p>
     <div class="pricing-grid reveal">
       <div class="pricing-card">
-        <h3>🏠 Privatkunden</h3>
+        <h3><svg style="display:inline;vertical-align:-4px;margin-right:8px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Privatkunden</h3>
         <p class="desc">Planbare Hilfe mit klar kommunizierten Stundensätzen – Sie wissen immer, was Sie erwartet.</p>
         <ul class="check-list">
           <li>Transparente Stundensätze</li>
@@ -289,7 +292,7 @@
       </div>
       <div class="pricing-card featured">
         <div class="pricing-tag">Empfohlen</div>
-        <h3>🏢 Firmen & Selbstständige</h3>
+        <h3><svg style="display:inline;vertical-align:-4px;margin-right:8px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>Firmen & Selbstständige</h3>
         <p class="desc">Flexible Abrechnung nach Aufwand oder maßgeschneiderte Betreuungspauschalen – abgestimmt auf Ihre Unternehmensgröße.</p>
         <ul class="check-list">
           <li>Abrechnung nach Aufwand oder Pauschale</li>
@@ -310,10 +313,10 @@
       <div class="about-visual">
         <div class="about-big">12+<span>Jahre IT-Erfahrung</span></div>
         <div class="divider"></div>
-        <div class="principle"><div class="principle-dot"></div>IT muss sicher sein und funktionieren</div>
-        <div class="principle"><div class="principle-dot"></div>Persönliche Beratung ohne Fachchinesisch</div>
-        <div class="principle"><div class="principle-dot"></div>Schnelle Reaktion – zeitnah und zuverlässig</div>
-        <div class="principle"><div class="principle-dot"></div>Lösungen, die Ihr Leben wirklich erleichtern</div>
+        <div class="principle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>IT muss sicher sein und funktionieren</div>
+        <div class="principle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Persönliche Beratung ohne Fachchinesisch</div>
+        <div class="principle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Schnelle Reaktion – zeitnah und zuverlässig</div>
+        <div class="principle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Lösungen, die Ihr Leben wirklich erleichtern</div>
       </div>
       <div>
         <div class="label">Über uns</div>
@@ -327,17 +330,19 @@
 </section>
 
 <section class="section steps-bg" id="faq">
-  <div class="container" style="text-align:center">
-    <div class="label">FAQ</div>
-    <h2>Häufige Fragen</h2>
-    <p class="lead" style="margin:0 auto">Schnelle Antworten auf die wichtigsten Fragen.</p>
-  </div>
-  <div class="faq-wrap reveal">
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Was passiert, wenn mein Problem nicht per Fernwartung gelöst werden kann?<span class="faq-icon">+</span></div><div class="faq-a">Kein Problem – wir kommen selbstverständlich gerne zu Ihnen vor Ort und helfen persönlich weiter.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Unterstützen Sie auch Apple-Geräte?<span class="faq-icon">+</span></div><div class="faq-a">Ja, absolut. Auch mit Apple-Geräten und macOS kennen wir uns bestens aus.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Muss ich für M365 bereits Lizenzen besitzen?<span class="faq-icon">+</span></div><div class="faq-a">Idealerweise ja – falls nicht, helfen wir gerne bei der Auswahl der passenden Lizenz. Anschließend unterstützen wir bei Implementierung und Administration.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kann ich auch Geräte bei Ihnen kaufen?<span class="faq-icon">+</span></div><div class="faq-a">Nein, wir verkaufen keine Hardware. Aber wir beraten Sie gerne ausführlich, welches Gerät am besten zu Ihrem Bedarf passt.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Was kostet die Kontaktaufnahme oder Problemanalyse?<span class="faq-icon">+</span></div><div class="faq-a">Gar nichts. Kontakt und Erstberatung sind vollständig kostenlos. Kosten entstehen erst, wenn Sie einem konkreten Angebot zustimmen.</div></div>
+  <div class="container">
+    <div style="text-align:center">
+      <div class="label">FAQ</div>
+      <h2>Häufige Fragen</h2>
+      <p class="lead" style="margin:0 auto">Schnelle Antworten auf die wichtigsten Fragen.</p>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Was passiert, wenn mein Problem nicht per Fernwartung gelöst werden kann?<span class="faq-icon">+</span></div><div class="faq-a">Kein Problem – wir kommen selbstverständlich gerne zu Ihnen vor Ort und helfen persönlich weiter.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Unterstützen Sie auch Apple-Geräte?<span class="faq-icon">+</span></div><div class="faq-a">Ja, absolut. Auch mit Apple-Geräten und macOS kennen wir uns bestens aus.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Muss ich für M365 bereits Lizenzen besitzen?<span class="faq-icon">+</span></div><div class="faq-a">Idealerweise ja – falls nicht, helfen wir gerne bei der Auswahl der passenden Lizenz. Anschließend unterstützen wir bei Implementierung und Administration.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kann ich auch Geräte bei Ihnen kaufen?<span class="faq-icon">+</span></div><div class="faq-a">Nein, wir verkaufen keine Hardware. Aber wir beraten Sie gerne ausführlich, welches Gerät am besten zu Ihrem Bedarf passt.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Was kostet die Kontaktaufnahme oder Problemanalyse?<span class="faq-icon">+</span></div><div class="faq-a">Gar nichts. Kontakt und Erstberatung sind vollständig kostenlos. Kosten entstehen erst, wenn Sie einem konkreten Angebot zustimmen.</div></div>
+    </div>
   </div>
 </section>
 
@@ -348,9 +353,9 @@
         <div class="label">Kontakt</div>
         <h2>Sprechen Sie uns an.</h2>
         <p>Schildern Sie uns Ihr Anliegen – unverbindlich, kostenlos und ohne Risiko. Wir melden uns so schnell wie möglich bei Ihnen.</p>
-        <div class="method"><div class="method-ico">📧</div><div><span class="method-lbl">E-Mail</span><span class="method-val">info@vagi-it-service.de</span></div></div>
-        <div class="method"><div class="method-ico">📞</div><div><span class="method-lbl">Telefon</span><span class="method-val">+49 (0) 123 456789</span></div></div>
-        <div class="method"><div class="method-ico">🕐</div><div><span class="method-lbl">Erreichbarkeit</span><span class="method-val">Anfragen jederzeit möglich</span></div></div>
+        <div class="method"><div class="method-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="method-lbl">E-Mail</span><span class="method-val">info@vagi-it-service.de</span></div></div>
+        <div class="method"><div class="method-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 7.37 7.37l.82-.82a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><span class="method-lbl">Telefon</span><span class="method-val">+49 (0) 123 456789</span></div></div>
+        <div class="method"><div class="method-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a6bff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><span class="method-lbl">Erreichbarkeit</span><span class="method-val">Anfragen jederzeit möglich</span></div></div>
       </div>
       <div class="form-box reveal">
         <div id="contactForm">
@@ -364,7 +369,7 @@
           <div class="field"><label>Ich bin</label><select><option>Privatkunde</option><option>Selbstständig</option><option>Kleinunternehmen</option><option>Sonstiges</option></select></div>
           <div class="field"><label>Ihr Anliegen</label><textarea placeholder="Beschreiben Sie kurz Ihr Problem oder Vorhaben – wir melden uns zeitnah."></textarea></div>
           <button class="form-submit" onclick="submitForm()">Kostenlos anfragen →</button>
-          <p class="form-note">🔒 Keine Kosten. Keine Verpflichtung. Erst nach gemeinsamer Einigung.</p>
+          <p class="form-note"><svg style="display:inline;vertical-align:-3px;margin-right:4px" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Keine Kosten. Keine Verpflichtung. Erst nach gemeinsamer Einigung.</p>
         </div>
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✓</div>
